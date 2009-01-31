@@ -1,6 +1,7 @@
 import web
 import twitter
 import time
+import re
 
 urls = (
     '/', 'home',
@@ -8,8 +9,7 @@ urls = (
 )
 
 app = web.application(urls, globals())
-globals = {'time': time}
-render = web.template.render('templates/', base='layout', globals=globals)
+render = web.template.render('templates/', base='layout')
 
 class home:
     def GET(self):
@@ -17,6 +17,8 @@ class home:
         api.SetCacheTimeout(900) # Cache for 15 minutes.
         statuses = api.GetUserTimeline('DailyDjango')
         for s in statuses:
+            s.text = re.sub(r'(http|https|ftp)(:\/\/[^\s]*)', r'<a href="\1\2">\1\2</a>', s.text)
+            s.text = re.sub(r'@([a-zA-Z0-9_]*)', r'<a href="http://twitter.com/\1">@\1</a>', s.text)
             s.day = time.strftime('%B %d', time.localtime(s.created_at_in_seconds))
         return render.home(statuses)
 

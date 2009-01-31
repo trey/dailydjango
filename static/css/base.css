@@ -26,17 +26,17 @@ body {
 }
 article {
 	margin: 15px 0;
-	padding: 10px 10px 15px;
+	padding-bottom: 8px;
 	color: #333;
-	background: #888;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+	background: #D7E275;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 article heading {
-	font-size: 10px;
+	font-size: 20px;
 }
 article div {
-	margin-top: 10px;
+	margin: 10px;
 }
 footer {
 	margin: 30px;
@@ -47,7 +47,25 @@ footer {
    Body copy style. Just add a class of 'copy'.
    -------------------------------------------- */
 .copy a {
-	color: #12170C;
+	text-decoration: none;
+	color: #3F512A;
+	background: #B0B762;
+}
+.copy a:hover {
+	color: #2B381D;
+	background: #A2A95A;
+}
+.copy article heading a {
+	display: block;
+	padding: 5px 10px;
+	color: #686D3A;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+footer a {
+	color: #333;
 }
 .copy h1,
 .copy h2,
@@ -58,7 +76,7 @@ footer {
 	margin: 0 0 20px;
 	font-size: 20px;
 }
-.copy p { line-height: 1.4em; }
+article { line-height: 1.4em; }
 .copy p,
 .copy ul,
 .copy ol { margin: 10px 0; }

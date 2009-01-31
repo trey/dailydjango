@@ -9,9 +9,10 @@ urls = (
     '/about/', 'about'
 )
 
-app = web.application(urls, globals())
+# app = web.application(urls, globals())
 globals = {'markdown': markdown.markdown, 'render': web.template.render('templates/')}
 render = web.template.render('templates/', base='layout', globals=globals)
+
 
 class home:
     def GET(self):
@@ -28,5 +29,7 @@ class about:
     def GET(self):
         return render.about()
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()
+
+application = web.application(urls, globals()).wsgifunc() 

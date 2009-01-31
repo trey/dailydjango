@@ -4,21 +4,33 @@ section, header, footer, nav, article, aside { display: block; }
 /* ------
    Blocks
    ------ */
+#logo {
+	float: left;
+	margin: 30px 0 30px 30px;
+}
+h1 {
+	float: left;
+	margin: 50px 0 30px 15px;
+	font-size: 40px;
+}
 body {
 	font: 16px Helvetica, sans-serif;
 	padding-bottom: 40px; /* Let the footer breathe. */
+	color: #444;
 	background: #666;
 }
 #main {
+	clear: both;
 	width: 500px;
-	margin: 30px auto 50px;
+	margin: 30px 100px 50px;
 }
 article {
 	margin: 15px 0;
 	padding: 10px 10px 15px;
-	background: #aaa;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	color: #333;
+	background: #888;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 article heading {
 	font-size: 10px;
@@ -26,13 +38,15 @@ article heading {
 article div {
 	margin-top: 10px;
 }
-
 #footer {
 }
 
 /* --------------------------------------------
    Body copy style. Just add a class of 'copy'.
    -------------------------------------------- */
+.copy a {
+	color: #12170C;
+}
 .copy h1,
 .copy h2,
 .copy h3,

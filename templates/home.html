@@ -3,6 +3,6 @@ $var title: Your daily dose of snake.
 
 $for s in (statuses):
 	<article>
-		<heading>Posted <a href="http://twitter.com/DailyDjango/status/$s.id">$s.relative_created_at:</a></heading>
+		<heading>Posted <a href="http://twitter.com/DailyDjango/status/$s.id">$s.day</a>:</heading>
 		<div>$s.text</div>
 	</article>

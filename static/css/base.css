@@ -10,8 +10,8 @@ section, header, footer, nav, article, aside { display: block; }
 }
 h1 {
 	float: left;
-	margin: 50px 0 30px 15px;
-	font-size: 40px;
+	margin: 60px 0 30px 15px;
+	font-size: 30px;
 }
 body {
 	font: 16px Helvetica, sans-serif;
@@ -38,7 +38,9 @@ article heading {
 article div {
 	margin-top: 10px;
 }
-#footer {
+footer {
+	margin: 30px;
+	font-size: 12px;
 }
 
 /* --------------------------------------------

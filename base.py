@@ -2,6 +2,7 @@ import web
 import twitter
 import time
 import re
+import markdown
 
 urls = (
     '/', 'home',
@@ -9,7 +10,8 @@ urls = (
 )
 
 app = web.application(urls, globals())
-render = web.template.render('templates/', base='layout')
+globals = {'markdown': markdown.markdown}
+render = web.template.render('templates/', base='layout', globals=globals)
 
 class home:
     def GET(self):

@@ -4,6 +4,12 @@ section, header, footer, nav, article, aside { display: block; }
 /* ------
    Blocks
    ------ */
+body {
+	font: 16px Helvetica, sans-serif;
+	padding-bottom: 40px; /* Let the footer breathe. */
+	color: #444;
+	background: #666;
+}
 #logo {
 	float: left;
 	margin: 30px 0 30px 30px;
@@ -13,11 +19,8 @@ h1 {
 	margin: 60px 0 30px 15px;
 	font-size: 30px;
 }
-body {
-	font: 16px Helvetica, sans-serif;
-	padding-bottom: 40px; /* Let the footer breathe. */
-	color: #444;
-	background: #666;
+nav {
+	clear: both;
 }
 #main {
 	clear: both;

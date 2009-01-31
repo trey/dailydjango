@@ -21,7 +21,16 @@ $def with (content)
 		<img id="logo" src="/static/img/dj.png" width="100" height="100" alt="Daily Django">
 		<h1>Another day, another bit of Django.</h1>
 	</header>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/about/">About</a></li>
+		</ul>
+	</nav>
 	<div id="main" class="copy">
+	$if content.page == 'about':
+		$:markdown(content)
+	$else:
 		$:content
 	</div><!-- #main -->
 	<footer>

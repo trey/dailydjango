@@ -4,6 +4,6 @@ $var page: home
 
 $for s in (statuses):
 	<article>
-		<heading><a href="http://twitter.com/DailyDjango/status/$s.id">$s.day</a></heading>
+		<heading><a href="http://twitter.com/DailyDjango/status/$s.id" title="$s.relative_created_at">$s.day</a></heading>
 		<div>$:s.text</div>
 	</article>

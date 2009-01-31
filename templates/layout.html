@@ -16,15 +16,16 @@ $def with (content)
 	<script>google.load("jquery", "1.2.6");</script>
 	<script src="/static/js/load.js"></script>
 </head>
-<body>
+<body class="$content.page">
 	<header>
-		<img id="logo" src="/static/img/dj.png" width="100" height="100" alt="Daily Django">
+		<a href="/"><img id="logo" src="/static/img/dj.png" width="100" height="100" alt="Daily Django"></a>
 		<h1>Another day, another bit of Django.</h1>
 	</header>
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="/about/">About</a></li>
+			<li><a href="http://twitter.com/DailyDjango">Twitter</a></li>
 		</ul>
 	</nav>
 	<div id="main" class="copy">
@@ -36,5 +37,6 @@ $def with (content)
 	<footer>
 		<div id="copyright">Copyright &#169; 2009 <a href="http://treypiepmeier.com">Trey Piepmeier</a> (<a href="http://twitter.com/trey">@trey</a>).  All Rights Reserved.</div>
 	</footer>
+	$:render.ga()
 </body>
 </html>

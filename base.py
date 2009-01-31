@@ -10,7 +10,7 @@ urls = (
 )
 
 app = web.application(urls, globals())
-globals = {'markdown': markdown.markdown}
+globals = {'markdown': markdown.markdown, 'render': web.template.render('templates/')}
 render = web.template.render('templates/', base='layout', globals=globals)
 
 class home:

@@ -1,0 +1,31 @@
+$def with (content)
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>DailyDjango ~ $content.title</title>
+	<meta name="description" content="Little bits of Django from Trey Piepmeier once-a-day.">
+	<link rel="stylesheet" href="/static/css/base.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/static/css/html5.css" type="text/css" media="all">
+	<!--[if lte IE 7]><link rel="stylesheet" href="/static/css/ie/all.css" type="text/css" media="screen"><![endif]-->
+	<!--[if lte IE 6]>
+		<script src="/css/ie/html5.js"></script>
+		<link rel="stylesheet" href="/static/css/ie/6.css" type="text/css" media="screen">
+	<![endif]-->
+	<script src="http://www.google.com/jsapi"></script>
+	<script>google.load("jquery", "1.2.6");</script>
+	<script src="/static/js/load.js"></script>
+</head>
+<body>
+	<header>
+		<h1>DailyDjango</h1>
+		<img src="/static/img/dj.png" width="100" height="100" alt="Daily Django" />
+	</header>
+	<div id="main">	
+		$:content
+	</div><!-- #main -->
+	<footer>
+		<div id="copyright">Copyright &#169; 2009 Trey Piepmeier.  All Rights Reserved.</div>
+	</footer>
+</body>
+</html>

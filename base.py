@@ -13,7 +13,6 @@ urls = (
 globals = {'markdown': markdown.markdown, 'render': web.template.render('templates/')}
 render = web.template.render('templates/', base='layout', globals=globals)
 
-
 class home:
     def GET(self):
         api = twitter.Api()
@@ -32,4 +31,4 @@ class about:
 # if __name__ == "__main__":
 #     app.run()
 
-application = web.application(urls, globals()).wsgifunc() 
+application = web.wsgifunc(web.webpyfunc(urls, globals()))

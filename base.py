@@ -31,4 +31,7 @@ class about:
 # if __name__ == "__main__":
 #     app.run()
 
-application = web.wsgifunc(web.webpyfunc(urls, globals()))
+app = web.application(urls, globals()) 
+application = app.wsgifunc() 
+if __name__ == "__main__": 
+  app.run()

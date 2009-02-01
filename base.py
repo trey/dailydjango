@@ -28,7 +28,9 @@ class about:
     def GET(self):
         return render.about()
 
-app = web.application(urls, globals())
-application = app.wsgifunc()
-if __name__ == "__main__":
-    app.run()
+# app = web.application(urls, globals())
+# application = app.wsgifunc()
+# if __name__ == "__main__":
+#     app.run()
+
+application = web.application(urls, globals()).wsgifunc()

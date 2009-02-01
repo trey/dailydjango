@@ -11,8 +11,8 @@ urls = (
 )
 
 app = web.application(urls, globals())
-myglobals = {'markdown': markdown.markdown, 'render': web.template.render('templates/')}
-render = web.template.render(os.path.join(os.path.dirname(__file__), 'templates'), base='layout', globals=myglobals)
+myglobals = {'markdown': markdown.markdown, 'render': web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'))}
+render = web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'), base='layout', globals=myglobals)
 
 class home:
     def GET(self):

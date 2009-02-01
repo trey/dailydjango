@@ -12,9 +12,10 @@ urls = (
     '/about/', 'about'
 )
 
+application = web.application(urls, globals()).wsgifunc()
 app = web.application(urls, globals())
-myglobals = {'markdown': markdown.markdown, 'render': web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'))}
-render = web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'), base='layout', globals=myglobals)
+globals = {'markdown': markdown.markdown, 'render': web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'))}
+render = web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'), base='layout', globals=globals)
 
 class home:
     def GET(self):
@@ -33,5 +34,3 @@ class about:
 
 if __name__ == "__main__":
     app.run()
-
-application = web.application(urls, globals()).wsgifunc()

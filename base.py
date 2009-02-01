@@ -5,6 +5,8 @@ import re
 import markdown
 import os.path
 
+web.config.debug = False
+
 urls = (
     '/', 'home',
     '/about/', 'about'

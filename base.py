@@ -3,6 +3,7 @@ import twitter
 import time
 import re
 import markdown
+import os
 
 urls = (
     '/', 'home',
@@ -32,6 +33,8 @@ class about:
 #     app.run()
 
 app = web.application(urls, globals)
-application = app.wsgifunc() 
-if __name__ == "__main__": 
-  app.run()
+
+curdir = os.path.dirname(__file__)
+session = web.session.Session(app, web.session.DiskStore(curdir + '/' + 'sessions'),)
+
+application = app.wsgifunc()

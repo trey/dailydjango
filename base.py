@@ -4,6 +4,8 @@ import time
 import re
 import markdown
 
+web.config.debug = False
+
 urls = (
     '/', 'home',
     '/about/', 'about'

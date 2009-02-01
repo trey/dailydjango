@@ -3,16 +3,15 @@ import twitter
 import time
 import re
 import markdown
-import os
 
 urls = (
     '/', 'home',
     '/about/', 'about'
 )
 
-# app = web.application(urls, globals())
-globals = {'markdown': markdown.markdown, 'render': web.template.render('templates/')}
-render = web.template.render('templates/', base='layout', globals=globals)
+app = web.application(urls, globals())
+myglobals = {'markdown': markdown.markdown, 'render': web.template.render('templates/')}
+render = web.template.render('templates/', base='layout', globals=myglobals)
 
 class home:
     def GET(self):
@@ -29,12 +28,7 @@ class about:
     def GET(self):
         return render.about()
 
-# if __name__ == "__main__":
-#     app.run()
-
-app = web.application(urls, globals)
-
-curdir = os.path.dirname(__file__)
-session = web.session.Session(app, web.session.DiskStore(curdir + '/' + 'sessions'),)
-
+app = web.application(urls, globals())
 application = app.wsgifunc()
+if __name__ == "__main__":
+    app.run()

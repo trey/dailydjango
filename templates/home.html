@@ -1,6 +1,8 @@
-$def with (statuses)
+$def with (statuses, follower_latest, follower_count)
 $var title: Your daily dose of snake.
 $var page: home
+
+<h2 class="followers"><a href="http://twitter.com/DailyDjango/followers">$follower_count followers</a> and counting.<br>Most recently: <a href="http://twitter.com/$follower_latest.screen_name">$follower_latest.name</a></h2>
 
 $for s in (statuses):
 	<article>

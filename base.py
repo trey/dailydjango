@@ -21,12 +21,17 @@ class home:
     def GET(self):
         api = twitter.Api()
         api.SetCacheTimeout(900) # Cache for 15 minutes.
+        followers = api.GetFollowers()
+        follower_latest = followers[0]
+        follower_count = 0
+        for f in followers:
+            follower_count += 1
         statuses = api.GetUserTimeline('DailyDjango')
         for s in statuses:
             s.text = re.sub(r'(http|https|ftp)(:\/\/[^\s]*)', r'<a href="\1\2">\1\2</a>', s.text)
             s.text = re.sub(r'@([a-zA-Z0-9_]*)', r'<a href="http://twitter.com/\1">@\1</a>', s.text)
             s.day = time.strftime('%B %d', time.localtime(s.created_at_in_seconds))
-        return render.home(statuses)
+        return render.home(statuses, follower_latest, follower_count)
 
 class about:
     def GET(self):

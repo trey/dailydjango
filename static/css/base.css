@@ -116,3 +116,10 @@ body.about article h2 {
 body.about article {
 
 }
+.copy h2.followers a {
+	color: #333;
+	background: none;
+}
+.copy h2.followers a:hover {
+	background: #777;
+}

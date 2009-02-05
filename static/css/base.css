@@ -113,8 +113,9 @@ body.about article h2 {
 	font-weight: normal;
 	background: #B0B762;
 }
-body.about article {
-
+body.about article img {
+	display: block;
+	margin: 20px auto;
 }
 .copy h2.followers a {
 	color: #333;

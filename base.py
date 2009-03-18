@@ -19,13 +19,17 @@ render = web.template.render(os.path.join(os.path.dirname(__file__), 'templates/
 
 class home:
     def GET(self):
-        api = twitter.Api()
+        api = twitter.Api(username='username', password='password')
         api.SetCacheTimeout(900) # Cache for 15 minutes.
-        followers = api.GetFollowers()
+
+        followers, counter = [], 1
+        while not len(followers) % 100:
+            followers += api.GetFollowers(page=counter)
+            counter += 1
+
         follower_latest = followers[0]
-        follower_count = 0
-        for f in followers:
-            follower_count += 1
+        follower_count = len(followers)
+
         statuses = api.GetUserTimeline('DailyDjango')
         for s in statuses:
             s.text = re.sub(r'(http|https|ftp)(:\/\/[^\s]*)', r'<a href="\1\2">\1\2</a>', s.text)
